@@ -1,0 +1,101 @@
+[{
+    "name": "Randy Perez",
+    "gpa": 1.6,
+    "rank": 2
+}, {
+    "name": "Alan Robinson",
+    "gpa": 1.8,
+    "rank": 6
+}, {
+    "name": "Johnny Ross",
+    "gpa": 2.2,
+    "rank": 16
+}, {
+    "name": "Daniel Bell",
+    "gpa": 2.2,
+    "rank": 16
+}, {
+    "name": "Irene Simmons",
+    "gpa": 2.2,
+    "rank": 16
+}, {
+    "name": "Frank Kelly",
+    "gpa": 2.2,
+    "rank": 16
+}, {
+    "name": "Peter Powell",
+    "gpa": 2.3,
+    "rank": 26
+}, {
+    "name": "James Edwards",
+    "gpa": 2.4,
+    "rank": 30
+}, {
+    "name": "Christine Walker",
+    "gpa": 2.7,
+    "rank": 38
+}, {
+    "name": "Ruby Lee",
+    "gpa": 2.7,
+    "rank": 38
+}, {
+    "name": "Chris \"Mac\" Cooper",
+    "gpa": 2.7,
+    "rank": 38
+}, {
+    "name": "Philip Allen",
+    "gpa": 2.9,
+    "rank": 46
+}, {
+    "name": "Alice Brown",
+    "gpa": 3.5,
+    "rank": 58
+}, {
+    "name": "Shirley Evans",
+    "gpa": 3.5,
+    "rank": 58
+}, {
+    "name": "Bonnie Murphy",
+    "gpa": 3.5,
+    "rank": 58
+}, {
+    "name": "Eugene Rivera",
+    "gpa": 3.5,
+    "rank": 58
+}, {
+    "name": "Jonathan Reed",
+    "gpa": 3.5,
+    "rank": 58
+}, {
+    "name": "Jessica Howard",
+    "gpa": 3.6,
+    "rank": 76
+}, {
+    "name": "Ann Mitchell",
+    "gpa": 3.6,
+    "rank": 76
+}, {
+    "name": "Willie Richardson",
+    "gpa": 3.6,
+    "rank": 76
+}, {
+    "name": "Joshua U\u0308ber",
+    "gpa": 3.6,
+    "rank": 76
+}, {
+    "name": "Kathy Patterson",
+    "gpa": 3.7,
+    "rank": 88
+}, {
+    "name": "Bruce Nelson",
+    "gpa": 3.7,
+    "rank": 88
+}, {
+    "name": "Justin Scott",
+    "gpa": 3.8,
+    "rank": 94
+}, {
+    "name": "Maria Russell",
+    "gpa": 3.9,
+    "rank": 98
+}]
