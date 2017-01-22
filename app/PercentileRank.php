@@ -16,11 +16,14 @@ class PercentileRank
     protected static function sort(array &$data, $index)
     {
         usort($data, function ($a, $b) use ($index) {
-            if ($a[$index] == $b[$index]) {
+            $item1 = trim((float) $a[$index]);
+            $item2 = trim((float) $b[$index]);
+
+            if ($item1 == $item2) {
                 return 0;
             }
 
-            return ($a[$index] < $b[$index]) ? -1 : 1;
+            return ($item1 < $item2) ? -1 : 1;
         });
     }
 

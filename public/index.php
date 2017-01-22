@@ -20,7 +20,7 @@ $app->parser()->loadFile(__DIR__.'/../input.csv');
  * @param string|int index/key of score of interest
  * @param string|int index/key to hold percentile rank
  */
-$data = $app->calculateRank(0, 'rank');
+$data = $app->calculateRank(2, 'rank');
 
 /**
  * Save result to file
