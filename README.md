@@ -3,7 +3,8 @@ An example application for calculating percentile ranks
 
 ## Installation
 ```bash
-composer require michaeltintiuc/percentilerank-example
+mkdir percentilerank-example && cd "$_"
+composer create-project michaeltintiuc/percentilerank-example .
 ```
 
 ## Usage
