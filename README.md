@@ -16,6 +16,14 @@ composer create-project michaeltintiuc/percentilerank-example .
 
 ## Usage
 
+When running application via Web Server set the Document Root to `public/`
+
+Run application via `CLI`
+
+```bash
+php public/index.php
+```
+
 Create the application with a parser (csv or json)
 
 ```php
