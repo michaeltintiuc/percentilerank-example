@@ -33,7 +33,7 @@ Create the application with a parser (csv or json)
 $app = new MichaelT\App('csv');
 ```
 
-Load CSV file
+Load file to be read by the parser
 
 ```php
 /**
@@ -52,7 +52,7 @@ Calculate percentile rank from file data
 $data = $app->calculateRank(2, 'rank');
 ```
 
-Save result to file
+Save result to file via created parser
 
 ```php
 /**
