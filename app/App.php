@@ -22,6 +22,7 @@ class App
     public function __construct($type)
     {
         $this->parser = Parser::make($type);
+        self::log(sprintf('App started with "%s" parser', $type));
     }
 
     /**
@@ -49,18 +50,24 @@ class App
         // Calculate the percentile rank
         PercentileRank::calculate($data, $index, $rank_index);
 
+        self::log(sprintf('Percentile Rank calculated from index: %s', $index));
+        self::log(sprintf('Percentile Rank stored in index: %s', $rank_index));
+        self::log(sprintf('Calculated %d items', count($data)));
+
         return $data;
     }
 
     /**
-     * Export data to file
-     * @param  string $file
-     * @param  array $data
-     * @param  string|int|array $skip_index
-     * @throws Exception
+     * Helper to log output
+     * @param string $text
      */
-    public function export($file, $data, $skip_index = null)
+    public static function log($text)
     {
-        $this->parser->exportFile($file, $data, $skip_index);
+        // Define the end of line constant
+        if (!defined('EOL')) {
+            define('EOL', php_sapi_name() === 'cli' ? PHP_EOL : '<br>');
+        }
+
+        echo $text.EOL;
     }
 }

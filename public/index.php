@@ -28,4 +28,4 @@ $data = $app->calculateRank(2, 'rank');
  * @param array data to save
  * @param string|int|array key/index of array to skip
  */
-$app->export(__DIR__.'/../output.csv', $data, 0);
+$app->parser()->exportFile(__DIR__.'/../output.csv', $data, 0);

@@ -28,6 +28,12 @@ abstract class Parser
     protected $data;
 
     /**
+     * Type holder
+     * @var array
+     */
+    protected $type;
+
+    /**
      * Set parser from provided type
      * @param  string $type
      * @throws InvalidArgumentException
@@ -38,18 +44,22 @@ abstract class Parser
         $type = trim(strtolower($type));
 
         if (!in_array($type, self::$supportedTypes)) {
-            self::invalidArgument($type);
+            self::invalidArgument();
         }
 
         switch ($type) {
             case self::CSV:
-                return new CsvParser;
+                $parser = new CsvParser;
                 break;
 
             case self::JSON:
-                return new JsonParser;
+                $parser = new JsonParser;
                 break;
         }
+
+        $parser->setType($type);
+
+        return $parser;
     }
 
     /**
@@ -58,10 +68,10 @@ abstract class Parser
      * @throws InvalidArgumentException
      * @return void
      */
-    private static function invalidArgument($type)
+    private static function invalidArgument()
     {
         $types = implode(', ', self::$supportedTypes);
-        $msg = sprintf(self::INVALID_ARGUMENT_MSG, $types, $type);
+        $msg = sprintf(self::INVALID_ARGUMENT_MSG, $types, $this->type);
         throw new InvalidArgumentException($msg);
     }
 
@@ -75,29 +85,72 @@ abstract class Parser
     }
 
     /**
+     * Set type
+     * @param string $type
+     * @return array
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    /**
+     * Get type
+     * @param string $type
+     * @return array
+     */
+    public function type()
+    {
+        return $this->type;
+    }
+
+    /**
      * Load file
-     * @param  string $type
+     * @param  string $file
      * @throws InvalidArgumentException
      * @return void
      */
     public function loadFile($file)
     {
-        $file = new SplFileObject($file, 'r');
+        try {
+            $file = new SplFileObject($file, 'r');
+            $file_name = $file->getBaseName();
+            App::log(sprintf('Read input file: %s', $file_name));
+        } catch (\Exception $e) {
+            App::log(sprintf('Error reading file: %s', $file));
+            App::log($e->getMessage());
+        }
+
         $this->loadFileData($file);
+        App::log('Data loaded from file');
     }
 
     /**
      * Export file
-     * @param  string $type
+     * @param  string $file
      * @param  array $data
      * @param  string|int|array $skip_index
-     * @throws InvalidArgumentException
      * @return void
      */
     public function exportFile($file, array $data, $skip_index = null)
     {
-        $file = new SplFileObject($file, 'w');
+        App::log('Preparing data for export');
+
+        if ($skip_index !== null) {
+            App::log(sprintf('Skipping index(s): %s', implode(', ', (array) $skip_index)));
+        }
+
+        try {
+            $file = new SplFileObject($file, 'w');
+            $file_name = $file->getBaseName();
+            App::log(sprintf('Opened file for write: %s', $file_name));
+        } catch (\Exception $e) {
+            App::log(sprintf('Error writing to file: %s', $file));
+            App::log($e->getMessage());
+        }
+
         $this->exportDataToFile($file, $data, $skip_index);
+        App::log('Exported data to file');
     }
 
     /**
