@@ -3,7 +3,7 @@ namespace MichaelT;
 
 /**
  * Calculates the percentile rank
- * @package default
+ * @package michaeltintiuc/percentilerank-example
  * @author Michael Tintiuc
  **/
 class App

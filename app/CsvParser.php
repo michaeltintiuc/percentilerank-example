@@ -5,7 +5,7 @@ use SplFileObject;
 
 /**
  * Class to parse csv
- * @package default
+ * @package michaeltintiuc/percentilerank-example
  * @author Michael Tintiuc
  **/
 class CsvParser extends Parser

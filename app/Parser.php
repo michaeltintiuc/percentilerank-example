@@ -6,7 +6,7 @@ use InvalidArgumentException;
 
 /**
  * Base Parser class
- * @package default
+ * @package michaeltintiuc/percentilerank-example
  * @author Michael Tintiuc
  **/
 abstract class Parser
@@ -37,7 +37,7 @@ abstract class Parser
      * Set parser from provided type
      * @param  string $type
      * @throws InvalidArgumentException
-     * @return MichaelT\Parser
+     * @return MichaelT\CsvParser|MichaelT\JsonParser
      */
     public static function make($type)
     {

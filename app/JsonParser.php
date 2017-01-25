@@ -5,7 +5,7 @@ use SplFileObject;
 
 /**
  * Class to parse json
- * @package default
+ * @package michaeltintiuc/percentilerank-example
  * @author Michael Tintiuc
  **/
 class JsonParser extends Parser

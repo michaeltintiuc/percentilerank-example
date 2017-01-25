@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Percentile Rank Calculator example application
+ * @package michaeltintiuc/percentilerank-example
+ * @author Michael Tintiuc
+ **/
+
 // Register the auto-loader
 require __DIR__.'/../vendor/autoload.php';
 
