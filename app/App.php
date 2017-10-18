@@ -38,6 +38,7 @@ class App
      * Calculate the percentile rank from loaded data
      * @param  int|string $index
      * @throws Exception
+     * @return array
      */
     public function calculateRank($index, $rank_index)
     {
@@ -48,7 +49,7 @@ class App
         }
 
         // Calculate the percentile rank
-        PercentileRank::calculate($data, $index, $rank_index);
+        $data = PercentileRank::calculate($data, $index, $rank_index);
 
         self::log(sprintf('Percentile Rank calculated from index: %s', $index));
         self::log(sprintf('Percentile Rank stored in index: %s', $rank_index));

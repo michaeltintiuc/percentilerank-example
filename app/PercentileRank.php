@@ -10,10 +10,11 @@ class PercentileRank
 {
     /**
      * Sort array in ascending order
-     * @param  array &$data
+     * @param  array $data
      * @param  int|string $index
+     * @return int
      */
-    protected static function sort(array &$data, $index)
+    protected static function sort(array $data, $index)
     {
         usort($data, function ($a, $b) use ($index) {
             $item1 = trim((float) $a[$index]);
@@ -25,18 +26,21 @@ class PercentileRank
 
             return ($item1 < $item2) ? -1 : 1;
         });
+
+        return $data;
     }
 
     /**
      * Calculate percentile rank
-     * @param  array &$data
+     * @param  array $data
      * @param  int|string $index
      * @param  int|string $key
+     * @return array
      */
-    public function calculate(array &$data, $index, $key)
+    public function calculate(array $data, $index, $key)
     {
         // Sort provided data in ascending order
-        PercentileRank::sort($data, $index);
+        $data = PercentileRank::sort($data, $index);
 
         // Generate an array of values
         // Make sure values are of the same type
@@ -58,5 +62,7 @@ class PercentileRank
             $freq = $count_values[$value];
             $data[$i][$key] = (($count_less[$value] + 0.5 * $freq) / $count) * 100;
         }
+
+        return $data;
     }
 }
