@@ -15,8 +15,7 @@ class JsonParser extends Parser
      */
     protected function loadFileData(SplFileObject $file)
     {
-        $data = $file->fread($file->getSize());
-        $this->data = json_decode($data, true);
+        $this->data = json_decode($file->fread($file->getSize()), true);
     }
 
     /**

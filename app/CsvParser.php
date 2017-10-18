@@ -26,6 +26,7 @@ class CsvParser extends Parser
             $this->data[] = $row;
         }
     }
+
     /**
      * {@inheritdoc}
      */

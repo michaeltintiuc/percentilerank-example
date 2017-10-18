@@ -69,6 +69,6 @@ class App
             define('EOL', php_sapi_name() === 'cli' ? PHP_EOL : '<br>');
         }
 
-        echo $text.EOL;
+        echo $text . EOL;
     }
 }
